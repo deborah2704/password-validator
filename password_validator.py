@@ -47,6 +47,12 @@ def validate(p):
 
     print(color + message + '\033[0m')
     sys.exit(code)
-
-p = sys.argv[1]
+    
+arg1 = sys.argv[1]
+if(arg1 == '-f'):
+    path = sys.argv[2]
+    p = open(path, 'r').read()
+else:
+    p = arg1
+    
 validate(p)
